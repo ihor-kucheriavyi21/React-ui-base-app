@@ -52,7 +52,12 @@ const Header = () => {
         {user.isAuthorized && (
           <>
             <Typography>
-              <div style={{ color: 'yellow' }}>
+              <div >
+                <a style={{color:"white"}} href={'/books'}>Books</a>
+              </div>
+            </Typography>
+            <Typography>
+              <div className={classes.paddingLeft} style={{ color: 'yellow' }}>
                 {user.name}
               </div>
             </Typography>

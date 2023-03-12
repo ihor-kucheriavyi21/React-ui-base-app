@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import {
-  BrowserRouter,
-  Switch,
-  Redirect,
-  Route,
-} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {BrowserRouter, Redirect, Route, Switch,} from 'react-router-dom';
 import IntlProvider from 'components/IntlProvider';
 import Header from 'components/Header';
 import PageInitial from 'pageProviders/Initial';
 import PageLogin from 'pageProviders/Login';
 import * as PAGES from 'constants/pages';
-import {
-  fetchUser,
-} from '../actions/user';
+import BookList from "../../pages/Book/BookList";
+
+import {fetchUser,} from '../actions/user';
+import CreateUpdateBook from "../../pages/Book/CreateUpdateBook";
 
 const App = () => {
   const [state, setState] = useState({
@@ -35,6 +31,15 @@ const App = () => {
         <Header />
         {state.componentDidMount && (
             <Switch>
+              <Route path={`/books/create`}>
+                <CreateUpdateBook/>
+              </Route>
+              <Route path={`/books/edit/:id`}>
+                <CreateUpdateBook/>
+              </Route>
+              <Route path={`/books`}>
+                <BookList/>
+              </Route>
               <Route path={`/${PAGES.LOGIN}`}>
                 <PageLogin />
               </Route>
