@@ -1,5 +1,5 @@
 # React-ui-base-app
-##React application with CRUD operations for book entity,
+## React application with CRUD operations for book entity
 
 Create 2 new pages for any entity currently in your database with CRUD (create/update/delete) operations.
 The first page will display a list of entities. When hovering over each entity, the "Delete" and "Edit" buttons will appear. At the very top of the list of entities there will be a "Create" button.
